@@ -49,7 +49,7 @@ const alunosController = {
     },
     update: async (req, res) => {
         try {
-            res.json(await alunos.findByIdAndDelete(req.params.id, req.body))
+            res.json(await alunos.updateMany( {turma : "E"}, {turma: "B"} ))
         } catch (error) {
             res.status(404).json({ error: "Registro não encontrado" })
         }
