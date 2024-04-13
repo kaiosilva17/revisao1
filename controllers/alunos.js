@@ -56,7 +56,7 @@ const alunosController = {
     },
     delete: async (req, res) => {
         try {
-            res.json(await alunos.findByIdAndUpdate(req.params.id))
+            res.json(await alunos.deleteMany({nome: "Teste"}))
         } catch (error) {
             res.status(404).json({ error: "Registro não encontrado" })
         }
